@@ -1,31 +1,42 @@
-// function sum(...theArgs) {
-//     console.log(theArgs);
-//     return theArgs.reduce((previous, current) => {
-//         return previous + current;
+// function sum(...arg) {
+//     console.log(arg);
+//     return arg.reduce((acc, value) => {
+//         return acc + value;
 //     });
 // }
-//
 // console.log(sum(1, 2, 3));
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// const humanReadable = (sec) => {
+// //
+//     const hours = parseInt(sec / 3600);
+//     const min = parseInt((sec / 60) % 60);
+//     const seconds = sec % 60;
 //
+//     const res = [ hours, min, seconds ];
+//     return res.map(item => item < 10 ? `0${item}` : `${item}`).join(',');
+// };
+// console.log(humanReadable('4600'));
+
+// const isTwinPrime = (num) => {
+//     const isPrime = (num) => {
+//         const sqrt = Math.sqrt(num);
+//         for (let i = 2; i <= sqrt; i++) {
+//             if (num % i === 0) {
+//                 return false;
+//             }
+//         }
+//         return num > 1;
+//     };
 //
-// console.log(sum(1, 2, 3, 4));
+//     return isPrime(num) && (isPrime(num - 2) || isPrime(num + 2));
+// };
+// console.log(isTwinPrime(9));
+const block = document.getElementById('t');
+block.style.background = 'green'
 
 
 
-const humanReadable = (sec) => {
-    const round = (x) => (x < 10 ? `0${x}` : `${x}`);
 
-    const hours = parseInt(sec / (60 * 60));
-    const min = parseInt((sec / 60) % 60);
-    const seconds = sec % 60;
 
-    return [hours, min, seconds].map(round).join(':');
-};
-
-console.log(humanReadable(359999)); // 99:59:59
-
-console.log(humanReadable(0)); // 00:00:00
-
-console.log(humanReadable(3661)); // 01:01:01
-
-// csacasc
