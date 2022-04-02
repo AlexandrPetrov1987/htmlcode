@@ -1,3 +1,4 @@
+// Редьюс
 // function sum(...arg) {
 //     console.log(arg);
 //     return arg.reduce((acc, value) => {
@@ -8,8 +9,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Время
 // const humanReadable = (sec) => {
-// //
+//
 //     const hours = parseInt(sec / 3600);
 //     const min = parseInt((sec / 60) % 60);
 //     const seconds = sec % 60;
@@ -17,10 +19,19 @@
 //     const res = [ hours, min, seconds ];
 //     return res.map(item => item < 10 ? `0${item}` : `${item}`).join(':');
 // };
-// console.log(humanReadable('4600'));
+// console.log(humanReadable('3666'));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Реализуйте функцию isTwinPrime, которая возвращает true, если
+// 1. number - является простым числом
+// 2. number+2 или number-2 - как минимум одно из этих чисел является простым.
+//     Если хоть одно условие не выполняется, возвращать false.
+//
+//     Например, возьмем число 7.
+// 1. 7 - простое число.
+// 2.  7+2  = 9, 7-2 = 5.  5 простое число
+// Ответ: true
 // const isTwinPrime = (num) => {
 //     const isPrime = (num) => {
 //         const sqrt = Math.sqrt(num);
@@ -34,10 +45,14 @@
 //
 //     return isPrime(num) && (isPrime(num - 2) || isPrime(num + 2));
 // };
-// console.log(isTwinPrime(9));
+// console.log(isTwinPrime(3));
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Напишите функцию persistence, которая принимает положительный параметр num и возвращает его мультипликативную величину,
+//     то есть количество раз, которое вы должны умножить на num, пока не получите одну цифру.
+//     Пример:
+// 39 --> 3 (3*9 = 27,  2*7 = 14, 1*4 = 4 . 4 состоит из одной цифры, чтобы дойти до четвёрки мы сделали 3 итерации. )
 // const foo = (num) => {
 //     let num1 = num.toString().split('');
 //     let i = 0;
@@ -49,8 +64,9 @@
 // }
 // console.log(foo(443));
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+// Замыкание
 // function q(name,age) {
 //     let obj = { name: name, age: age };
 //     return {
@@ -67,269 +83,204 @@
 // ee.setName('name');
 // console.log(ee.getName());
 
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-let usersList = [
-    {
-        id: 1,
-        name: 'Leanne Graham',
-        username: 'Bret',
-        email: 'Sincere@april.biz',
-        address: {
-            street: 'Kulas Light',
-            suite: 'Apt. 556',
-            city: 'Gwenborough',
-            zipcode: '92998-3874',
-            geo: {
-                lat: '-37.3159',
-                lng: '81.1496'
-            }
-        },
-        phone: '1-770-736-8031 x56442',
-        website: 'hildegard.org',
-        company: {
-            name: 'Romaguera-Crona',
-            catchPhrase: 'Multi-layered client-server neural-net',
-            bs: 'harness real-time e-markets'
-        }
-    },
-    {
-        id: 2,
-        name: 'Ervin Howell',
-        username: 'Antonette',
-        email: 'Shanna@melissa.tv',
-        address: {
-            street: 'Victor Plains',
-            suite: 'Suite 879',
-            city: 'Wisokyburgh',
-            zipcode: '90566-7771',
-            geo: {
-                lat: '-43.9509',
-                lng: '-34.4618'
-            }
-        },
-        phone: '010-692-6593 x09125',
-        website: 'anastasia.net',
-        company: {
-            name: 'Deckow-Crist',
-            catchPhrase: 'Proactive didactic contingency',
-            bs: 'synergize scalable supply-chains'
-        }
-    },
-    {
-        id: 3,
-        name: 'Clementine Bauch',
-        username: 'Samantha',
-        email: 'Nathan@yesenia.net',
-        address: {
-            street: 'Douglas Extension',
-            suite: 'Suite 847',
-            city: 'McKenziehaven',
-            zipcode: '59590-4157',
-            geo: {
-                lat: '-68.6102',
-                lng: '-47.0653'
-            }
-        },
-        phone: '1-463-123-4447',
-        website: 'ramiro.info',
-        company: {
-            name: 'Romaguera-Jacobson',
-            catchPhrase: 'Face to face bifurcated interface',
-            bs: 'e-enable strategic applications'
-        }
-    },
-    {
-        id: 4,
-        name: 'Patricia Lebsack',
-        username: 'Karianne',
-        email: 'Julianne.OConner@kory.org',
-        address: {
-            street: 'Hoeger Mall',
-            suite: 'Apt. 692',
-            city: 'South Elvis',
-            zipcode: '53919-4257',
-            geo: {
-                lat: '29.4572',
-                lng: '-164.2990'
-            }
-        },
-        phone: '493-170-9623 x156',
-        website: 'kale.biz',
-        company: {
-            name: 'Robel-Corkery',
-            catchPhrase: 'Multi-tiered zero tolerance productivity',
-            bs: 'transition cutting-edge web services'
-        }
-    },
-    {
-        id: 5,
-        name: 'Chelsey Dietrich',
-        username: 'Kamren',
-        email: 'Lucio_Hettinger@annie.ca',
-        address: {
-            street: 'Skiles Walks',
-            suite: 'Suite 351',
-            city: 'Roscoeview',
-            zipcode: '33263',
-            geo: {
-                lat: '-31.8129',
-                lng: '62.5342'
-            }
-        },
-        phone: '(254)954-1289',
-        website: 'demarco.info',
-        company: {
-            name: 'Keebler LLC',
-            catchPhrase: 'User-centric fault-tolerant solution',
-            bs: 'revolutionize end-to-end systems'
-        }
-    },
-    {
-        id: 6,
-        name: 'Mrs. Dennis Schulist',
-        username: 'Leopoldo_Corkery',
-        email: 'Karley_Dach@jasper.info',
-        address: {
-            street: 'Norberto Crossing',
-            suite: 'Apt. 950',
-            city: 'South Christy',
-            zipcode: '23505-1337',
-            geo: {
-                lat: '-71.4197',
-                lng: '71.7478'
-            }
-        },
-        phone: '1-477-935-8478 x6430',
-        website: 'ola.org',
-        company: {
-            name: 'Considine-Lockman',
-            catchPhrase: 'Synchronised bottom-line interface',
-            bs: 'e-enable innovative applications'
-        }
-    },
-    {
-        id: 7,
-        name: 'Kurtis Weissnat',
-        username: 'Elwyn.Skiles',
-        email: 'Telly.Hoeger@billy.biz',
-        address: {
-            street: 'Rex Trail',
-            suite: 'Suite 280',
-            city: 'Howemouth',
-            zipcode: '58804-1099',
-            geo: {
-                lat: '24.8918',
-                lng: '21.8984'
-            }
-        },
-        phone: '210.067.6132',
-        website: 'elvis.io',
-        company: {
-            name: 'Johns Group',
-            catchPhrase: 'Configurable multimedia task-force',
-            bs: 'generate enterprise e-tailers'
-        }
-    },
-    {
-        id: 8,
-        name: 'Nicholas Runolfsdottir V',
-        username: 'Maxime_Nienow',
-        email: 'Sherwood@rosamond.me',
-        address: {
-            street: 'Ellsworth Summit',
-            suite: 'Suite 729',
-            city: 'Aliyaview',
-            zipcode: '45169',
-            geo: {
-                lat: '-14.3990',
-                lng: '-120.7677'
-            }
-        },
-        phone: '586.493.6943 x140',
-        website: 'jacynthe.com',
-        company: {
-            name: 'Abernathy Group',
-            catchPhrase: 'Implemented secondary concept',
-            bs: 'e-enable extensible e-tailers'
-        }
-    },
-    {
-        id: 9,
-        name: 'Glenna Reichert',
-        username: 'Delphine',
-        email: 'Chaim_McDermott@dana.io',
-        address: {
-            street: 'Dayna Park',
-            suite: 'Suite 449',
-            city: 'Bartholomebury',
-            zipcode: '76495-3109',
-            geo: {
-                lat: '24.6463',
-                lng: '-168.8889'
-            }
-        },
-        phone: '(775)976-6794 x41206',
-        website: 'conrad.com',
-        company: {
-            name: 'Yost and Sons',
-            catchPhrase: 'Switchable contextually-based project',
-            bs: 'aggregate real-time technologies'
-        }
-    },
-    {
-        id: 10,
-        name: 'Clementina DuBuque',
-        username: 'Moriah.Stanton',
-        email: 'Rey.Padberg@karina.biz',
-        address: {
-            street: 'Kattie Turnpike',
-            suite: 'Suite 198',
-            city: 'Lebsackbury',
-            zipcode: '31428-2261',
-            geo: {
-                lat: '-38.2386',
-                lng: '57.2232'
-            }
-        },
-        phone: '024-648-3804',
-        website: 'ambrose.net',
-        company: {
-            name: 'Hoeger LLC',
-            catchPhrase: 'Centralized empowering task-force',
-            bs: 'target end-to-end models'
-        }
-    }
-];
+// Замыкание.Контекст this
+// class Test {
+//     firstFunction() {
+//         console.log('first');
+//         this.#secondFunction();
+//     }
+//     #secondFunction() {
+//         console.log('second');
+//
+//     }
+// }
+// const test = new Test();
+//
+// test.firstFunction();
+// test.#secondFunction();
 
-const createElement = (tag, content, className) => {
-    let res = document.createElement(tag)
-    if (content) {
-        res.innerText = content
-    }
-    if (className) {
-        res.classList.add(className)
-    }
-    return res
-}
-let main = createElement('main', null, 'main');
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-const scan = (obj, father) => {
-    for (const objKey in obj) {
-        let value = obj[objKey]
-        if (typeof value === 'object') {
-            let newFather = createElement('div', null, objKey)
-            father.appendChild(newFather)
-            scan(value, newFather)
-        } else {
-            let innerBlock = createElement('div', value, objKey)
-            father.appendChild(innerBlock)
-        }
-    }
-}
-usersList.forEach(user => {
-    let el = createElement('div', null, 'wrap');
-    main.appendChild(el)
-    scan(user, el)
-})
-document.body.appendChild(main)
+// Свойство replacer JSON
+// const set = {
+//     userName : "Vasya",
+//     level : 'yyyu',
+//     health : 90,
+//     value : true
+// }
+// const data = JSON.parse(JSON.stringify(set, [ 'userName','level', "health", 'value'  ] ));
+// console.log(data);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Date
+// let date = new Date().getMinutes();
+// console.log(date);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Unique
+// const set = new Set(['1','2','3','1']);
+// console.log([...set]);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Sort
+// let arr = [
+//     {
+//         name: 'vasya',
+//         age: 22
+//     },
+//     {
+//         name: 'caly',
+//         age: 30
+//     },
+//     {
+//         name: 'fedya',
+//         age: 30
+//     },
+//     {
+//         name: 'tedya',
+//         age: 30
+//     },
+//     {
+//         name: 'kedya',
+//         age: 30
+//     },
+//     {
+//         name: 'nedya',
+//         age: 30
+//     },
+//     {
+//         name: 'zedya',
+//         age: 30
+//     }
+// ]
+// arr.sort(function (a, b) {
+//     if (a.name < b.name) {
+//
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// }).sort((a,b) => a.age - b.age);
+// console.log(arr);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Call, Apply, Bind
+// let arr = [1,'qqqq','wwwwwww',4,5];
+// let user1 = {
+//     foo : function (arr,a) {
+//         console.log(`${this.age} my ${a} ${ arr }  name is ${this.name}`);
+//     },
+//     foobar : function ( a, b, c) {
+//         console.log(this.name,  a, b, c);
+//     }
+//
+// }
+// let user2 = {
+//     name : 'qwwwwq',
+//     age : 66
+// }
+// user1.foo.call(user2, arr, 'qqqqqqqqqqqqqqq');
+// user1.foobar.call(user2, arr, 'q', 'w', 'e');
+// user1.foobar.apply(user2, arr);
+
+//Наследование функций
+// function  User(name, age) {
+//     this.name = name;
+//         this.age = age;
+// }
+// let user = new User('Vasya', 33);
+// console.log(user);
+//
+// function User2( name, age, pass, status, field) {
+//     // User.apply(this, arguments);
+//     User.apply(this, [name, age]);
+//     this.pass = pass;
+//     this.status = status;
+//     this.field = field;
+// }
+// let user2 = new User2('Petya', 22, 'qqq',true, 'false');
+// console.log(user2);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Счётчик рекурсия
+// function foo(count) {
+//
+//     if (count >= 20) {
+//         return;
+//     }
+//     console.log(count);
+//     foo(++count);
+// }
+//
+// foo(15);
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Значения порциями в новый массив
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,10,11];
+// let num = [];
+// function foo(array) {
+//     for (const number of array) {
+//         num.push(array.slice(0,3));
+//
+//         array.splice(0,3);
+//     }
+//     num.push(array);
+//     return num;
+// }
+// let foo1 = foo(arr);
+// console.log(foo1);
+// console.log(arr);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Бесполезный rest и callback
+// let arr = [1,2,3,6,5];
+// let q = [arr[arr.length-2],arr[arr.length-1]];
+// console.log(...q);
+//
+// function foo(a,b,cb) {
+//     return cb(a * b);
+// }
+// foo(12,3,(data) => {
+//     console.log(data);
+// })
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//Только уникальные значения из двух массивов
+// function uniq(arr1, arr2) {
+//     let res = new Set(arr1);
+//     new Set(arr2).forEach(item => res.has(item) ? res.delete(item) : res.add(item));
+//     return [...res];
+// }
+//
+// let result = uniq([1, 2, 3, 4, 'ee', true, false], [3, 4, 4, 5, 6, 6, 6, 6, 'ee', 'qq', false]); //[1,2,5,6]
+// console.log(result);
+//
+// function uniq(arr1, arr2) {
+//     let res = new Set(arr1);
+//     for (let item of new Set(arr2)) {
+//         if (res.has(item)) {
+//             res.delete(item);
+//         } else {
+//             res.add(item);
+//         }
+//     }
+//     return [...res];
+// }
+//
+// let result = uniq([1, 2, 3, 4], [3, 4, 4, 5, 6, 6, 6, 6, 6, 6]); //[1,2,5,6]
+// console.log(result);
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
